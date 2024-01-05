@@ -1,5 +1,6 @@
 #include <stddef.h>
 
+#define AIV_LIST(x) &(x.list_item)
 #define LIST_ITEM struct aiv_list_item
 #define INT_ITEM struct aiv_int_item
 
@@ -117,6 +118,19 @@ unsigned int aiv_list_lenght(struct aiv_list_item* head)
 
 int main(int arg, char** argv)
 {
+    struct aiv_list_item *head = NULL;
 
-
+    printf("\nAdding Value in List\n");
+    struct aiv_int_item int_item1;
+    struct aiv_int_item int_item2;
+    struct aiv_int_item int_item3;
+    struct aiv_int_item int_item4;
+    int_item1.value = 100;
+    int_item2.value = 101;
+    int_item3.value = 102;
+    int_item4.value = 103;
+    aiv_list_append(&head, AIV_LIST(int_item1));
+    aiv_list_append(&head, AIV_LIST(int_item2));
+    aiv_list_append(&head, AIV_LIST(int_item3));
+    aiv_list_append(&head, AIV_LIST(int_item4));
 }
